@@ -1,0 +1,1538 @@
+[
+  {
+    "model": "convex_expanding",
+    "fold": 3,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.21302639840013662,
+      "equal_mean": 0.7869736015998635
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 3,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 3.2049378106392736e-17,
+      "timestral28": 0.25000952187094994,
+      "equal_mean": 0.7499904781290501
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 4,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7648501324261429,
+      "equal_mean": 0.2351498675738571
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 4,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7039822723099162,
+      "equal_mean": 0.29601772769008394
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 5,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6685155648629253,
+      "equal_mean": 0.33148443513707476
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 5,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6158652098368191,
+      "equal_mean": 0.384134790163181
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 6,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.748170607184329,
+      "equal_mean": 0.25182939281567096
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 6,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.2018516789897275e-17,
+      "timestral28": 0.6617651510458896,
+      "equal_mean": 0.3382348489541103
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 7,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 2.403703357979455e-17,
+      "timestral28": 0.7455643905002652,
+      "equal_mean": 0.25443560949973465
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 7,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6378611072703411,
+      "equal_mean": 0.36213889272965893
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 8,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 5.007715329123864e-17,
+      "timestral28": 0.8734077730207499,
+      "equal_mean": 0.12659222697925004
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 8,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 8.012344526598184e-18,
+      "timestral28": 0.7664850721968101,
+      "equal_mean": 0.23351492780319
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 9,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8576045507357923,
+      "equal_mean": 0.14239544926420766
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 9,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 3.2049378106392736e-17,
+      "timestral28": 0.7796969596765834,
+      "equal_mean": 0.2203030403234167
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 10,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8761149328545028,
+      "equal_mean": 0.12388506714549735
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 10,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 8.012344526598184e-18,
+      "timestral28": 0.8011379649725969,
+      "equal_mean": 0.1988620350274032
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 11,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.865364028770149,
+      "equal_mean": 0.13463597122985108
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 11,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8010287306478916,
+      "equal_mean": 0.19897126935210852
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 12,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8113637807364874,
+      "equal_mean": 0.18863621926351276
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 12,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7710139183084369,
+      "equal_mean": 0.2289860816915631
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 13,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 2.003086131649546e-17,
+      "timestral28": 0.8273875151273584,
+      "equal_mean": 0.17261248487264172
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 13,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7731922470098147,
+      "equal_mean": 0.22680775299018524
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 14,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.865819383476925,
+      "equal_mean": 0.13418061652307497
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 14,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8083666084213104,
+      "equal_mean": 0.19163339157868967
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 15,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7558772474445685,
+      "equal_mean": 0.24412275255543148
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 15,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7457536733062696,
+      "equal_mean": 0.2542463266937305
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 16,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7321774828597524,
+      "equal_mean": 0.26782251714024763
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 16,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7213380786022074,
+      "equal_mean": 0.2786619213977926
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 17,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7307961366974008,
+      "equal_mean": 0.26920386330259916
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 17,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 7.796621855999636e-18,
+      "timestral28": 0.7408796560468555,
+      "equal_mean": 0.25912034395314454
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 18,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.01604266093348275,
+      "timestral28": 0.7168025034004846,
+      "equal_mean": 0.2671548356660329
+    }
+  },
+  {
+    "model": "convex_expanding",
+    "fold": 18,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.019850597191762184,
+      "timestral28": 0.7272827851818522,
+      "equal_mean": 0.2528666176263858
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 3,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.21302639840013662,
+      "equal_mean": 0.7869736015998635
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 3,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 3.2049378106392736e-17,
+      "timestral28": 0.25000952187094994,
+      "equal_mean": 0.7499904781290501
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 4,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7648501324261429,
+      "equal_mean": 0.2351498675738571
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 4,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.7039822723099162,
+      "equal_mean": 0.29601772769008394
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 5,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.795133205225846,
+      "equal_mean": 0.20486679477415404
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 5,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.029846676080117124,
+      "timestral28": 0.7323500818809469,
+      "equal_mean": 0.23780324203893613
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 6,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.04014277355923399,
+      "timestral28": 0.9598572264407661,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 6,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.14255529149024088,
+      "timestral28": 0.8574447085097591,
+      "equal_mean": 1.2894551962641665e-16
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 7,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0946687707312674,
+      "timestral28": 0.9053312292687328,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 7,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.14582146983572614,
+      "timestral28": 0.8541785301642738,
+      "equal_mean": 3.9268447434709364e-17
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 8,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.15370858624242598,
+      "timestral28": 0.8462914137575739,
+      "equal_mean": 3.209238430557093e-17
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 8,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.20463672144945366,
+      "timestral28": 0.7953632785505464,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 9,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.009967984393943832,
+      "timestral28": 0.9900320156060562,
+      "equal_mean": 4.8138576458356397e-17
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 9,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.024916097154445604,
+      "timestral28": 0.9750839028455546,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 10,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.17128512313737917,
+      "timestral28": 0.8287148768626208,
+      "equal_mean": 4.85722573273506e-17
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 10,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.14030388939765576,
+      "timestral28": 0.8596961106023441,
+      "equal_mean": 1.5671549480214889e-16
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 11,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.09781274192606429,
+      "timestral28": 0.9021872580739357,
+      "equal_mean": 2.949029909160572e-17
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 11,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.04184360276925566,
+      "timestral28": 0.9581563972307443,
+      "equal_mean": 6.830473686658678e-17
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 12,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.12027882152599229,
+      "timestral28": 0.5646279677228895,
+      "equal_mean": 0.31509321075111824
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 12,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.10587520554339774,
+      "timestral28": 0.7683524863014974,
+      "equal_mean": 0.12577230815510468
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 13,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.02453336611054184,
+      "timestral28": 0.7307830876720234,
+      "equal_mean": 0.24468354621743488
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 13,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.018352944928230874,
+      "timestral28": 0.7464039288987485,
+      "equal_mean": 0.23524312617302046
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 14,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.6935056990362967e-17,
+      "timestral28": 0.8421949970621818,
+      "equal_mean": 0.15780500293781813
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 14,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8269182020530613,
+      "equal_mean": 0.1730817979469388
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 15,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 0.5866866703173651,
+      "equal_mean": 0.4133133296826349
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 15,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 3.3429633861500722e-18,
+      "timestral28": 0.6402968090463772,
+      "equal_mean": 0.35970319095362274
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 16,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.008744076355402215,
+      "timestral28": 0.5690718901802082,
+      "equal_mean": 0.42218403346438976
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 16,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.5868286870906922,
+      "equal_mean": 0.41317131290930775
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 17,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.1886850212143094,
+      "timestral28": 0.5731335925490894,
+      "equal_mean": 0.2381813862366013
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 17,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.15403445830275625,
+      "timestral28": 0.6723348578808963,
+      "equal_mean": 0.1736306838163475
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 18,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.5630364679370987,
+      "timestral28": 0.4369635320629013,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_recent4",
+    "fold": 18,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.5152791683403851,
+      "timestral28": 0.484720831659615,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 3,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.4057179541000107,
+      "equal_mean": 0.5942820458999892
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 3,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.04244403376523628,
+      "equal_mean": 0.9575559662347637
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 3,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.5024441086522535,
+      "equal_mean": 0.4975558913477465
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 3,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.026006121298852103,
+      "equal_mean": 0.9739938787011478
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 4,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8946095336638888,
+      "equal_mean": 0.10539046633611127
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 4,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6394400067100222,
+      "equal_mean": 0.3605599932899779
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 4,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 0.8631486049796547,
+      "equal_mean": 0.13685139502034527
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 4,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.5457686016090724,
+      "equal_mean": 0.45423139839092763
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 5,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.8630544043840388,
+      "equal_mean": 0.13694559561596134
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 5,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.5254153266811109,
+      "equal_mean": 0.4745846733188893
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 5,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 7.812035913433228e-17,
+      "timestral28": 0.8474209824885331,
+      "equal_mean": 0.15257901751146682
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 5,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 4.006172263299091e-17,
+      "timestral28": 0.4574174207194076,
+      "equal_mean": 0.5425825792805924
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 6,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-16,
+      "timestral28": 0.9866503572170685,
+      "equal_mean": 0.013349642782931409
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 6,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 4.006172263299092e-17,
+      "timestral28": 0.5551156101023743,
+      "equal_mean": 0.4448843898976256
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 6,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 6.409875621278547e-17,
+      "timestral28": 0.9509710176148496,
+      "equal_mean": 0.049028982385150494
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 6,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.45561350500709563,
+      "equal_mean": 0.5443864949929044
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 7,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 0.9381852175380292,
+      "equal_mean": 0.061814782461970835
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 7,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.595310502934232,
+      "equal_mean": 0.404689497065768
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 7,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 3.2049378106392736e-17,
+      "timestral28": 0.9749320404235663,
+      "equal_mean": 0.02506795957643379
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 7,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.4101024014768456,
+      "equal_mean": 0.5898975985231544
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 8,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 6.938893903907228e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 8,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6441058049020656,
+      "equal_mean": 0.3558941950979344
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 8,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 8.012344526598176e-18,
+      "timestral28": 1.0,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 8,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.45083112289140714,
+      "equal_mean": 0.5491688771085929
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 9,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 2.7755575615628914e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 9,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 8.012344526598184e-18,
+      "timestral28": 0.643088533393896,
+      "equal_mean": 0.35691146660610396
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 9,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 8.012344526598189e-18,
+      "timestral28": 1.0,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 9,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.4952767459088824,
+      "equal_mean": 0.5047232540911176
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 10,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 10,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 2.003086131649546e-17,
+      "timestral28": 0.6480105555454508,
+      "equal_mean": 0.35198944445454916
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 10,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 1.0,
+      "equal_mean": 1.3877787807814457e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 10,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 2.003086131649546e-18,
+      "timestral28": 0.5123119746823027,
+      "equal_mean": 0.48768802531769734
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 11,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 11,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 0.646889885487942,
+      "equal_mean": 0.3531101145120581
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 11,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 8.326672684688674e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 11,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.1787174945989208e-32,
+      "timestral28": 0.5189741909094711,
+      "equal_mean": 0.48102580909052883
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 12,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 1.0,
+      "equal_mean": 2.7755575615628914e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 12,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 8.68292849513617e-18,
+      "timestral28": 0.5545419026867315,
+      "equal_mean": 0.4454580973132684
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 12,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 0.9999999999999999,
+      "equal_mean": 2.7755575615628914e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 12,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.4644683367753508,
+      "equal_mean": 0.5355316632246492
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 13,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 13,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 2.003086131649546e-17,
+      "timestral28": 0.6407080202743104,
+      "equal_mean": 0.35929197972568966
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 13,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 1.1730886562432539e-17,
+      "timestral28": 1.0,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 13,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 8.513116059510572e-18,
+      "timestral28": 0.5038585827201837,
+      "equal_mean": 0.49614141727981637
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 14,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 1.1102230246251565e-16
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 14,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.602468905319637e-17,
+      "timestral28": 0.6980309450935738,
+      "equal_mean": 0.3019690549064262
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 14,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 1.0,
+      "equal_mean": 2.7755575615628914e-17
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 14,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 5.546044727004679e-17,
+      "timestral28": 0.5448607576678767,
+      "equal_mean": 0.45513924233212333
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 15,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.1165540086494879,
+      "timestral28": 0.8125396481785988,
+      "equal_mean": 0.07090634317191326
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 15,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 4.006172263299082e-18,
+      "timestral28": 0.7074179025847692,
+      "equal_mean": 0.2925820974152309
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 15,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.10683186425592475,
+      "timestral28": 0.8931681357440753,
+      "equal_mean": 0.0
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 15,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.5783503044571915,
+      "equal_mean": 0.4216496955428085
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 16,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.10414603107673266,
+      "timestral28": 0.7750286583111254,
+      "equal_mean": 0.1208253106121419
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 16,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6971850321288082,
+      "equal_mean": 0.3028149678711918
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 16,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.1143576780689404,
+      "timestral28": 0.883442084520009,
+      "equal_mean": 0.002200237411050639
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 16,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 3.517920018709515e-17,
+      "timestral28": 0.5697349638853885,
+      "equal_mean": 0.43026503611461153
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 17,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.1034869333427929,
+      "timestral28": 0.7724769609864075,
+      "equal_mean": 0.1240361056707996
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 17,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.6939293691764669,
+      "equal_mean": 0.30607063082353314
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 17,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.11392904718474484,
+      "timestral28": 0.8809260694764406,
+      "equal_mean": 0.005144883338814594
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 17,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 1.6024689053196368e-17,
+      "timestral28": 0.6051295863523722,
+      "equal_mean": 0.3948704136476278
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 18,
+    "scenario": "observed_weather",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.11984772267945104,
+      "timestral28": 0.7954142575303933,
+      "equal_mean": 0.08473801979015569
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 18,
+    "scenario": "observed_weather",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 8.012344526598178e-18,
+      "timestral28": 0.6308404052510475,
+      "equal_mean": 0.36915959474895255
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 18,
+    "scenario": "weather_stress",
+    "horizon_start": 1,
+    "horizon_end": 24,
+    "weights": {
+      "seasonal_naive": 0.11767238221980574,
+      "timestral28": 0.8823276177801942,
+      "equal_mean": 1.8431436932253575e-18
+    }
+  },
+  {
+    "model": "convex_daywise",
+    "fold": 18,
+    "scenario": "weather_stress",
+    "horizon_start": 25,
+    "horizon_end": 48,
+    "weights": {
+      "seasonal_naive": 0.0,
+      "timestral28": 0.5635782128017525,
+      "equal_mean": 0.4364217871982476
+    }
+  }
+]

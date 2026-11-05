@@ -1,0 +1,21 @@
+{
+  "selected_model": "timestral28_original",
+  "selected_interval": "absolute_day",
+  "selection_rule": "Session 1: lowest full-48h weather-stress RMSE, then lowest selection Winkler for that point model; audit excluded.",
+  "assignment": {
+    "session1": "RMSE ratio on all48 hidden hours",
+    "final": "Day-two ranks: 0.3 RMSE + 0.3 MAPE + 0.4 Winkler; class ranks cannot be known locally."
+  },
+  "adaptation": "Half-strength level or bias corrections use only the immediately preceding completed48h block, split by daylight. Previous block observed-weather hindcasts diagnose model bias retrospectively.",
+  "interval_policies": {
+    "absolute_day": "Expanding95th percentile absolute errors, per forecast day",
+    "scaled_symmetric": "Expanding95th percentile abs(error)/(50+0.2*forecast), per forecast day",
+    "scaled_daynight": "Expanding signed2.5/97.5 percentiles of error/(50+0.2*forecast), split by forecast day and daylight; bounds include point."
+  },
+  "caveats": [
+    "More candidates on repeatedly used windows can overfit validation; no guarantee of beating hidden baseline.",
+    "Weather stress magnitudes are assumptions, not measured forecast errors.",
+    "Audit was already seen and is excluded from selection; adaptation may use actual earlier blocks only.",
+    "Interval method is selected on validation Winkler; nominal95% does not guarantee future coverage."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "device": "cpu",
+  "dtype": "float32",
+  "contexts": [
+    168,
+    504,
+    1536
+  ],
+  "point_forecast": "native median quantile (not claimed to be the conditional mean)",
+  "intervals": "Evaluated using historical rolling-error calibration; native Bolt quantiles are not labeled as 95% intervals.",
+  "timings_seconds": {
+    "amazon/chronos-bolt-tiny": 0.37,
+    "amazon/chronos-bolt-small": 1.06
+  },
+  "versions": {
+    "amazon/chronos-bolt-tiny": {
+      "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+      "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--amazon--chronos-bolt-tiny/snapshots/a0e552de83495b5c28c14c71c374f3e33280b340"
+    },
+    "amazon/chronos-bolt-small": {
+      "revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+      "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--amazon--chronos-bolt-small/snapshots/772f3d25d38aec6d914c8949dab4462e2d46f5d8"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "amazon/chronos-bolt-tiny": {
+    "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+    "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--amazon--chronos-bolt-tiny/snapshots/a0e552de83495b5c28c14c71c374f3e33280b340"
+  },
+  "amazon/chronos-bolt-small": {
+    "revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+    "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--amazon--chronos-bolt-small/snapshots/772f3d25d38aec6d914c8949dab4462e2d46f5d8"
+  }
+}

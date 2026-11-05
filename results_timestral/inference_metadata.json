@@ -1,0 +1,29 @@
+{
+  "models": {
+    "mistralai/Timestral-5M": {
+      "revision": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+      "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--mistralai--Timestral-5M/snapshots/bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f"
+    },
+    "mistralai/Timestral-28M": {
+      "revision": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+      "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--mistralai--Timestral-28M/snapshots/49b26409ac87b5935539a5d8ffe7f397b720db47"
+    }
+  },
+  "device": "cpu",
+  "context_hours": 504,
+  "point": "native median",
+  "covariates": [
+    "cloud_cover",
+    "temperature",
+    "wind_speed",
+    "pressure",
+    "humidity",
+    "daylight",
+    "air_density"
+  ],
+  "timings_seconds": {
+    "mistralai/Timestral-5M": 1.69,
+    "mistralai/Timestral-28M": 6.49
+  },
+  "intervals": "95% empirical rolling-error intervals evaluated separately; native 5th/95th quantiles are not called 95% intervals."
+}

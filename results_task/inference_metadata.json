@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "timestral28_recent7d": [
+      "mistralai/Timestral-28M",
+      168,
+      false
+    ],
+    "timestral28_clock21d": [
+      "mistralai/Timestral-28M",
+      504,
+      true
+    ],
+    "timestral123_weather21d": [
+      "mistralai/Timestral-123M",
+      504,
+      false
+    ]
+  },
+  "timings": {
+    "timestral28_recent7d": 2.69,
+    "timestral28_clock21d": 6.2,
+    "timestral123_weather21d": 16.38
+  },
+  "versions": {
+    "mistralai/Timestral-123M": {
+      "revision": "5a147287addda85f6acd8da3fb8858fe9af7e8f7",
+      "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--mistralai--Timestral-123M/snapshots/5a147287addda85f6acd8da3fb8858fe9af7e8f7"
+    },
+    "mistralai/Timestral-28M": {
+      "revision": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+      "local_path": "/Users/alona/Documents/KSE/time_serias/.cache/huggingface/hub/models--mistralai--Timestral-28M/snapshots/49b26409ac87b5935539a5d8ffe7f397b720db47"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "selected_model": "timestral28_snaive10",
+  "selection_rule": "Lowest pooled full-48h weather-stress RMSE on folds 6\u201316; audit fold 17 excluded.",
+  "intervals": "Expanding absolute errors by forecast day; official baseline intervals. Learned models calibrate from fold 3.",
+  "caveats": [
+    "Repeated selection-window reuse can overfit model selection.",
+    "Weather perturbations are hypothetical.",
+    "Latest audit has already been seen; hidden performance is unknown."
+  ]
+}

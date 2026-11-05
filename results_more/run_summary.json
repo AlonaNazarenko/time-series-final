@@ -1,0 +1,65 @@
+{
+  "selected_model": "weather_ridge_21d",
+  "configs": {
+    "seasonal_mean_3d": {
+      "kind": "mean",
+      "days": 3
+    },
+    "seasonal_mean_7d": {
+      "kind": "mean",
+      "days": 7
+    },
+    "calendar_ridge_21d": {
+      "kind": "ridge",
+      "days": 21,
+      "weather": false
+    },
+    "weather_ridge_21d": {
+      "kind": "ridge",
+      "days": 21,
+      "weather": true
+    },
+    "weather_ridge_60d": {
+      "kind": "ridge",
+      "days": 60,
+      "weather": true
+    },
+    "weather_boosting_60d": {
+      "kind": "boost",
+      "days": 60,
+      "weather": true
+    },
+    "weather_boosting_120d": {
+      "kind": "boost",
+      "days": 120,
+      "weather": true
+    },
+    "weather_extra_trees_60d": {
+      "kind": "extra",
+      "days": 60,
+      "weather": true
+    },
+    "weather_random_forest_60d": {
+      "kind": "forest",
+      "days": 60,
+      "weather": true
+    },
+    "SARIMA_101_110_24_21d": {
+      "kind": "SARIMA",
+      "days": 21
+    },
+    "seasonal_naive": {
+      "kind": "baseline"
+    }
+  },
+  "selection": "Lowest pooled RMSE under illustrative weather stress on five reused selection windows",
+  "weather_stress": "Three seeded scenarios per origin; shared daily plus hourly errors. Day-one scales: temperature 2 C, wind 1 m/s, cloud .25, pressure 2 mmHg, humidity 5 percentage points. Day-two scales multiplied by 1.5. Daylight unchanged; density adjusted for temperature/pressure.",
+  "caveats": [
+    "Stress assumptions are illustrative, not measured forecast uncertainty.",
+    "Observed-weather validation is optimistic for weather models.",
+    "Selection windows were reused after earlier model comparisons; selection optimism is possible.",
+    "The last window was already seen; it is an audit, not an untouched test.",
+    "Three stress scenarios do not create three independent historical windows.",
+    "Empirical nominal 95% intervals do not guarantee future coverage."
+  ]
+}

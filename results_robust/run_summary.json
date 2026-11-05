@@ -1,0 +1,172 @@
+{
+  "selected_model": "blend_SARIMA50_hour50",
+  "configs": {
+    "seasonal_naive": {
+      "kind": "baseline"
+    },
+    "SARIMA_21d": {
+      "kind": "SARIMA",
+      "days": 21
+    },
+    "SARIMA_MA_21d": {
+      "kind": "sarima_new",
+      "days": 21,
+      "order": [
+        1,
+        0,
+        1
+      ],
+      "seasonal": [
+        0,
+        1,
+        1,
+        24
+      ]
+    },
+    "SARIMA_ARMA_21d": {
+      "kind": "sarima_new",
+      "days": 21,
+      "order": [
+        1,
+        0,
+        1
+      ],
+      "seasonal": [
+        1,
+        1,
+        1,
+        24
+      ]
+    },
+    "SARIMA_diff_21d": {
+      "kind": "sarima_new",
+      "days": 21,
+      "order": [
+        0,
+        1,
+        1
+      ],
+      "seasonal": [
+        0,
+        1,
+        1,
+        24
+      ]
+    },
+    "weather_ridge_21d": {
+      "kind": "ridge",
+      "days": 21,
+      "weather": true
+    },
+    "weather_boosting_60d": {
+      "kind": "boost",
+      "days": 60,
+      "weather": true
+    },
+    "hour_weather_ridge_7d": {
+      "kind": "hour_ridge",
+      "days": 7,
+      "alpha": 20
+    },
+    "hour_weather_ridge_14d": {
+      "kind": "hour_ridge",
+      "days": 14,
+      "alpha": 20
+    },
+    "hour_weather_ridge_28d": {
+      "kind": "hour_ridge",
+      "days": 28,
+      "alpha": 20
+    },
+    "hour_weather_ridge_60d": {
+      "kind": "hour_ridge",
+      "days": 60,
+      "alpha": 20
+    },
+    "weather_correction_14d": {
+      "kind": "correction",
+      "days": 14,
+      "alpha": 20
+    },
+    "weather_correction_28d": {
+      "kind": "correction",
+      "days": 28,
+      "alpha": 20
+    },
+    "residual_boosting_28d": {
+      "kind": "residual_boost",
+      "days": 28
+    },
+    "residual_boosting_60d": {
+      "kind": "residual_boost",
+      "days": 60
+    }
+  },
+  "blends": {
+    "blend_SARIMA75_ridge25": {
+      "SARIMA_21d": 0.75,
+      "weather_ridge_21d": 0.25
+    },
+    "blend_SARIMA50_ridge50": {
+      "SARIMA_21d": 0.5,
+      "weather_ridge_21d": 0.5
+    },
+    "blend_SARIMA75_hour25": {
+      "SARIMA_21d": 0.75,
+      "hour_weather_ridge_14d": 0.25
+    },
+    "blend_SARIMA50_hour50": {
+      "SARIMA_21d": 0.5,
+      "hour_weather_ridge_14d": 0.5
+    },
+    "blend_SARIMA50_correction50": {
+      "SARIMA_21d": 0.5,
+      "weather_correction_14d": 0.5
+    },
+    "blend_three": {
+      "SARIMA_21d": 0.5,
+      "hour_weather_ridge_14d": 0.25,
+      "residual_boosting_28d": 0.25
+    }
+  },
+  "calibration_windows": 6,
+  "selection_windows": 11,
+  "selection_rule": "Lowest pooled 48-hour RMSE under illustrative weather stress; audit excluded; baseline eligible.",
+  "weather_stress": "Same illustrative perturbation magnitudes as session1_more_models.py; seeds depend on origin, three per window. Scenarios are not independent historical windows.",
+  "caveats": [
+    "Expanded selection includes six additional earlier windows. Previously inspected windows and audit are not independent tests.",
+    "Weather stress is hypothetical, not calibrated to real forecast errors.",
+    "Nominal 95% intervals use earlier absolute errors; no future coverage guarantee.",
+    "No hidden targets are available; hidden-leaderboard success cannot be guaranteed."
+  ],
+  "fit_diagnostics": [
+    {
+      "origin": 32760,
+      "model": "SARIMA_MA_21d",
+      "notes": [
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ]
+    },
+    {
+      "origin": 32952,
+      "model": "SARIMA_MA_21d",
+      "notes": [
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ]
+    },
+    {
+      "origin": 33000,
+      "model": "SARIMA_ARMA_21d",
+      "notes": [
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ]
+    },
+    {
+      "origin": 33048,
+      "model": "SARIMA_MA_21d",
+      "notes": [
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ]
+    }
+  ]
+}

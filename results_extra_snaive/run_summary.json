@@ -1,0 +1,19 @@
+{
+  "selected_model": "extra_trees_60d_snaive40",
+  "best_blend": "extra_trees_60d_snaive40",
+  "candidates": 61,
+  "days": [
+    21,
+    60,
+    120
+  ],
+  "trees": 120,
+  "min_samples_leaf": 3,
+  "max_features": 0.9,
+  "random_state": 42,
+  "selection": "Lowest full-48h weather-stress RMSE over folds 6\u201316; audit fold17 excluded.",
+  "intervals": "Expanding earlier errors per forecast day; official SNaive intervals.",
+  "caveats": [
+    "Reused validation windows; weather stress is hypothetical; audit previously seen."
+  ]
+}

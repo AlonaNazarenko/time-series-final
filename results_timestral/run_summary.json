@@ -1,0 +1,20 @@
+{
+  "selected_model": "timestral_28m_weather_504h",
+  "best_timestral_candidate": "timestral_28m_weather_504h",
+  "candidates": [
+    "timestral_5m_target_504h",
+    "timestral_5m_weather_504h",
+    "timestral_28m_target_504h",
+    "timestral_28m_weather_504h",
+    "blend_equal50_timestral28_weather50"
+  ],
+  "selection_rule": "Lowest pooled weather-stress RMSE on same eleven selection windows; latest audit excluded.",
+  "caveats": [
+    "Weather stress assumptions are illustrative, not measured forecast-error distributions.",
+    "Many model searches on reused windows can overfit model selection.",
+    "Audit is previously seen, not an untouched test.",
+    "Timestral median forecasts are evaluated as point forecasts; no fine-tuning.",
+    "Timestral intervals use fixed early calibration for validation; prior ensembles retain their expanding-calibration intervals.",
+    "Pretraining overlap with disguised series cannot be independently verified; no original-source search performed."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "selected_model": "SARIMA_101_110_24_21d",
+  "selection_rule": "Lowest pooled RMSE on five selection windows; baseline eligible",
+  "calibration_windows": 6,
+  "selection_windows": 5,
+  "window_hours": 48,
+  "audit_note": "Last 48-hour window was already inspected during EDA and the initial model probe; it is not an untouched test set. It is excluded from model selection.",
+  "audit_selected": {
+    "phase": "last_window_audit",
+    "fold": 11,
+    "start": "2026-10-25 01:00:00",
+    "RMSE": 116.10841743588963,
+    "MAPE": 38.78911514667764,
+    "Winkler": 1017.7881999804358,
+    "coverage": 1.0,
+    "mean_width": 1017.7881999804358
+  },
+  "audit_baseline": {
+    "phase": "last_window_audit",
+    "fold": 11,
+    "start": "2026-10-25 01:00:00",
+    "RMSE": 120.40431712913507,
+    "MAPE": 51.08804005110588,
+    "Winkler": 568.4635860015115,
+    "coverage": 1.0,
+    "mean_width": 568.4635860015115
+  },
+  "interval_method": "95th percentile absolute rolling forecast errors, separately for each forecast day; non-baseline intervals evaluated with calibration-only errors, refreshed on all past folds for final forecast.",
+  "configs": {
+    "ETS_ANA_7d": {
+      "kind": "ETS",
+      "days": 7,
+      "trend": false
+    },
+    "ETS_ANA_21d": {
+      "kind": "ETS",
+      "days": 21,
+      "trend": false
+    },
+    "ETS_AAdA_21d": {
+      "kind": "ETS",
+      "days": 21,
+      "trend": true
+    },
+    "ARIMA_212_21d": {
+      "kind": "ARIMA",
+      "days": 21
+    },
+    "SARIMA_101_110_24_7d": {
+      "kind": "SARIMA",
+      "days": 7
+    },
+    "SARIMA_101_110_24_21d": {
+      "kind": "SARIMA",
+      "days": 21
+    },
+    "SARIMA_101_110_24_60d": {
+      "kind": "SARIMA",
+      "days": 60
+    }
+  },
+  "fit_diagnostics": [
+    {
+      "fold": 5,
+      "model": "ETS_AAdA_21d",
+      "notes": [
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ]
+    },
+    {
+      "fold": 9,
+      "model": "ARIMA_212_21d",
+      "notes": [
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ]
+    }
+  ]
+}

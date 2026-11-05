@@ -1,0 +1,25 @@
+{
+  "selected_model": "blend_SARIMA50_hour50",
+  "best_hf_candidate": "blend_SARIMA50_bolt_small504_50",
+  "hf_candidates": [
+    "chronos_bolt_tiny_168h",
+    "chronos_bolt_tiny_504h",
+    "chronos_bolt_tiny_1536h",
+    "chronos_bolt_small_168h",
+    "chronos_bolt_small_504h",
+    "chronos_bolt_small_1536h",
+    "blend_SARIMA50_bolt_tiny504_50",
+    "blend_SARIMA50_bolt_small504_50"
+  ],
+  "selection_rule": "Lowest pooled weather-stress RMSE on same eleven selection windows, across previous and HF candidates; latest audit excluded.",
+  "inference": "Frozen pretrained Chronos-Bolt Tiny/Small, local CPU; context lengths 168, 504, 1536 hours; native median point forecast; no fine-tuning or weather inputs.",
+  "intervals": "Empirical absolute-error calibration from six earlier 48h windows, separately by forecast day; refreshed with all completed historical blocks for future forecast.",
+  "caveats": [
+    "Native model quantiles are not presented as 95% intervals.",
+    "Validation windows reused across model searches; model selection can be optimistic.",
+    "Previously inspected audit is not an untouched test.",
+    "Pretraining-data overlap cannot be independently verified; no attempt was made to identify the disguised series.",
+    "Only supplied project data are used as local inputs; pretrained weights are external model artifacts.",
+    "Zero-shot forecasting does not guarantee superiority to seasonal naive."
+  ]
+}

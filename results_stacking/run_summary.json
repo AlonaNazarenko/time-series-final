@@ -1,0 +1,30 @@
+{
+  "selected_model": "equal_mean",
+  "best_new_ensemble": "equal_mean",
+  "base_models": [
+    "SARIMA_21d",
+    "hour_weather_ridge_14d",
+    "weather_ridge_21d",
+    "weather_correction_28d",
+    "chronos_bolt_small_504h"
+  ],
+  "methods": [
+    "equal_mean",
+    "median",
+    "stack_convex",
+    "stack_convex_recent4",
+    "stack_ridge",
+    "stack_daywise",
+    "stack_shrunk"
+  ],
+  "selection_rule": "Lowest pooled weather-stress RMSE over eleven selection windows; latest audit excluded.",
+  "chronology": "Meta-model training starts with three earlier out-of-fold windows. At fold k, fit only folds <k; score fold k; then append its errors. Selection remains folds 6-16. Audit fold17. Final refit uses all18 completed folds.",
+  "intervals": "Stacking intervals use expanding prequential errors from fold3 onward; these differ from fixed calibration for earlier candidates, so interval comparisons include both model and calibration-policy differences.",
+  "caveats": [
+    "Base models/features and meta-methods were chosen after prior experiments; data reuse still creates selection optimism.",
+    "Stacking uses forward out-of-fold forecasts, not fitted values or randomly split observations.",
+    "Illustrative weather scenarios are pooled within historical windows, not counted as independent windows.",
+    "Daywise convex weights may be less stable because fewer historical errors support each fit.",
+    "No hidden targets available; a learned ensemble is not guaranteed to win."
+  ]
+}
