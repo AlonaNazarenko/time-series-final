@@ -9,8 +9,24 @@ MATH840 final project: forecast the next 48 hours of electricity generation with
 | `train.csv`, `weather_forecast.csv` | Supplied data |
 | `NAZARENKO_project.csv` | Submission file, identical to `results_task/selected_model_forecast.csv` |
 | `session1_*.py` | Experiments, one script per step |
-| `session1_*.ipynb`, `baseline_win_rate.ipynb` | Results and review of each step |
+| `notebooks/` | Numbered notebooks, one per step, in the order the work was done |
 | `results*/` | Saved predictions, scores and forecasts |
+
+Notebooks run from `notebooks/` or from the repository root; their first code cell sets the working directory.
+
+| Notebook | Topic |
+|---|---|
+| `00_assignment_template` | Original assignment template |
+| `01_eda` | Data checks and exploration |
+| `02_ets_arima_sarima` | ETS, ARIMA and SARIMA baselines |
+| `03_more_models` | Ridge, boosting, trees and weather sensitivity |
+| `04_robust_models` | SARIMA variants, weather corrections, blends |
+| `05_chronos_pretrained` | Chronos-Bolt pretrained models |
+| `06_stacking` | Ensembles and chronological stacking |
+| `07_timestral` | Timestral with future weather |
+| `08_task_review` | Assignment metrics and interval methods |
+| `09_baseline_win_rate` | Share of windows beating the benchmark |
+| `10_extra_trees_snaive` | Extra Trees + SNaive |
 
 Saved results are in the repository, so the notebooks open without refitting. To rerun everything, set up both environments (see below) and run the steps in this order, because later steps read the outputs of earlier ones:
 
@@ -36,7 +52,7 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python session1_extra_snaive.
 
 ## SNaive ensembles
 
-Open `session1_extra_snaive.ipynb` for an executed Extra Trees + SNaive experiment, weight curves, window comparisons, prior-ensemble comparison, and the final forecast. Use the `Time Series (.venv)` kernel; Run All reruns evaluation with cached model predictions, while `REFIT=True` retrains the three Extra Trees configurations.
+Open `notebooks/10_extra_trees_snaive.ipynb` for an executed Extra Trees + SNaive experiment, weight curves, window comparisons, prior-ensemble comparison, and the final forecast. Use the `Time Series (.venv)` kernel; Run All reruns evaluation with cached model predictions, while `REFIT=True` retrains the three Extra Trees configurations.
 
 For Extra Trees specifically, run `OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python session1_extra_snaive.py`. This fits 120-tree weather models on 21/60/120-day histories using only available target lags, and tests SNaive weights 5–95% in 5% steps: 61 candidates including standalone models and baseline. It uses the common six initial calibration windows, eleven selection windows, latest audit, and origin-based weather-stress seeds. Point predictions are cached in `results_extra_snaive/`; remove the corresponding cache if changing the data or model configuration. Earlier Extra Trees results in `results_more/` used different windows and were not part of the 66,845-combination search.
 
@@ -59,9 +75,9 @@ source .venv/bin/activate
 python -m jupyter lab
 ```
 
-Open `session1_eda.ipynb` and select `Time Series (.venv)` (in VS Code: Select Kernel → Python Environments → `.venv/bin/python`). Run the cells in order. The EDA notebook does not require your surname or produce a submission.
+Open `notebooks/01_eda.ipynb` and select `Time Series (.venv)` (in VS Code: Select Kernel → Python Environments → `.venv/bin/python`). Run the cells in order. The EDA notebook does not require your surname or produce a submission.
 
-`_project.ipynb` is the original assignment notebook. Set `SURNAME` in its setup cell before running it to generate the benchmark submission. Upload your submission yourself according to the assignment instructions.
+`notebooks/00_assignment_template.ipynb` is the original assignment notebook. Set `SURNAME` in its setup cell before running it to generate the benchmark submission. Upload your submission yourself according to the assignment instructions.
 
 To recreate the environment:
 
@@ -78,7 +94,7 @@ LLM use: Codex helped set up the local Python environment and create the initial
 
 ## ETS, ARIMA, and seasonal ARIMA comparison
 
-Open `session1_models.ipynb` for baseline explanations, comparison tables, diagnostics, and the next 48-hour forecast. It reads saved experiment results so opening it does not refit every model.
+Open `notebooks/02_ets_arima_sarima.ipynb` for baseline explanations, comparison tables, diagnostics, and the next 48-hour forecast. It reads saved experiment results so opening it does not refit every model.
 
 To reproduce all fits and forecasts:
 
@@ -101,7 +117,7 @@ Codex also implemented and ran this model comparison and helped document its int
 
 ## Additional models and weather sensitivity
 
-Run `python session1_more_models.py`, then open `session1_more_models.ipynb`. This compares seasonal means, calendar Ridge, weather Ridge, histogram boosting, Extra Trees, Random Forest, the previous SARIMA, and seasonal naive. Target lags are at least 48 hours, so they are available for the entire forecast horizon. Training uses recent windows and no future targets.
+Run `python session1_more_models.py`, then open `notebooks/03_more_models.ipynb`. This compares seasonal means, calendar Ridge, weather Ridge, histogram boosting, Extra Trees, Random Forest, the previous SARIMA, and seasonal naive. Target lags are at least 48 hours, so they are available for the entire forecast horizon. Training uses recent windows and no future targets.
 
 `results_more/` contains separate results and a new candidate forecast; the previous SARIMA outputs remain in `results/`. The notebook's final cell can save the new candidate using your surname. Weather models are evaluated with observed weather and three illustrative perturbed-weather scenarios. The latter are sensitivity assumptions, not measured weather forecast errors. The lowest pooled stress-scenario selection RMSE chooses the candidate; MAPE and interval scores may favor another model. Reusing selection windows can introduce model-selection optimism. The historical audit is not an untouched test set.
 
@@ -111,7 +127,7 @@ The additional-model notebook now includes dated window-by-window RMSE tables, b
 
 ## Broader search: SARIMA variants, weather corrections, and blends
 
-Run `python session1_robust_models.py`, then open `session1_robust_models.ipynb`. This tests 21 candidates, including seasonal-MA SARIMA variants, hour-specific weather Ridge, weather corrections anchored to the last day, residual boosting, and fixed-weight ensembles. It uses six calibration windows, eleven selection windows, and the previously seen latest audit. The lowest pooled stress-scenario 48-hour RMSE selects the candidate; the baseline is eligible.
+Run `python session1_robust_models.py`, then open `notebooks/04_robust_models.ipynb`. This tests 21 candidates, including seasonal-MA SARIMA variants, hour-specific weather Ridge, weather corrections anchored to the last day, residual boosting, and fixed-weight ensembles. It uses six calibration windows, eleven selection windows, and the previously seen latest audit. The lowest pooled stress-scenario 48-hour RMSE selects the candidate; the baseline is eligible.
 
 The larger selection period adds six earlier windows but does not turn previously examined data into an untouched test set. Weather perturbations are illustrative, and this run ties their seeds to forecast origins. Do not directly attribute differences between runs solely to model changes: validation periods and stress draws differ. Every candidate within this run receives the same windows and scenarios.
 
@@ -137,7 +153,7 @@ HF_HUB_OFFLINE=1 .venv-hf/bin/python session1_hf_inference.py
 
 The download step retrieves public weights/configuration into `.cache/huggingface`; prediction runs locally and can run offline afterward. It does not send the project CSV data to an inference service. The recorded model revisions document the evaluated artifacts; the download step reuses recorded revisions when the manifest exists.
 
-Open `session1_hf_models.ipynb` with the original `Time Series (.venv)` kernel to review results. `results_hf/` includes individual model forecasts, `best_hf_forecast.csv`, and `selected_model_forecast.csv` (best among previous candidates and HF candidates, using the same eleven selection windows). The latest audit is excluded from selection. The notebook can save the selected file under your surname. More models on reused windows can increase selection optimism; model size and pretraining do not guarantee hidden-leaderboard improvement.
+Open `notebooks/05_chronos_pretrained.ipynb` with the original `Time Series (.venv)` kernel to review results. `results_hf/` includes individual model forecasts, `best_hf_forecast.csv`, and `selected_model_forecast.csv` (best among previous candidates and HF candidates, using the same eleven selection windows). The latest audit is excluded from selection. The notebook can save the selected file under your surname. More models on reused windows can increase selection optimism; model size and pretraining do not guarantee hidden-leaderboard improvement.
 
 Codex set up this isolated environment, implemented the inference/evaluation scripts, and ran the local pretrained-model comparisons.
 
@@ -145,23 +161,23 @@ HF-run finding: Chronos-Bolt Small with 504 hours of history achieved pooled sel
 
 ## Percentage of windows beating baseline
 
-Open `baseline_win_rate.ipynb` with the original kernel. It calculates `100 × winning windows / total windows`, where a win means strictly lower RMSE than seasonal naive (numerical ties are reported separately). It compares the 29 candidates with available results on the same eleven selection windows; older ETS/ARIMA runs on five windows are excluded from this ranking. The baseline ties itself and is omitted from the win-rate chart. The latest audit is separate. Change `SCENARIO` to compare observed weather and weather stress.
+Open `notebooks/09_baseline_win_rate.ipynb` with the original kernel. It calculates `100 × winning windows / total windows`, where a win means strictly lower RMSE than seasonal naive (numerical ties are reported separately). It compares the 29 candidates with available results on the same eleven selection windows; older ETS/ARIMA runs on five windows are excluded from this ranking. The baseline ties itself and is omitted from the win-rate chart. The latest audit is separate. Change `SCENARIO` to compare observed weather and weather stress.
 
 The notebook includes a percentage bar chart, a window win/loss matrix, pooled RMSE reduction, and audit results. It exports tables and PNGs to `results_win_rate/`. A win rate is a historical frequency, not a probability of winning the hidden leaderboard; win counts do not reflect the size of each win or loss.
 
 ## Ensembles and chronological stacking
 
-Run `.venv/bin/python session1_stacking.py`, then open `session1_stacking.ipynb`. This uses saved broad-search/HF artifacts and reconstructs the six initial base-forecast windows. It compares equal mean, median, expanding convex weights, recent-four-window convex weights, Ridge stacking, separate day-one/day-two weights, and weights shrunk toward the prior fixed blend.
+Run `.venv/bin/python session1_stacking.py`, then open `notebooks/06_stacking.ipynb`. This uses saved broad-search/HF artifacts and reconstructs the six initial base-forecast windows. It compares equal mean, median, expanding convex weights, recent-four-window convex weights, Ridge stacking, separate day-one/day-two weights, and weights shrunk toward the prior fixed blend.
 
 Meta models learn only from earlier out-of-fold forecasts and targets. At each new window they predict first, then update after its actuals become available. The first three windows initialize stacking; forward errors from window 3 onward calibrate expanding prediction intervals. The eleven selection windows and separate audit are unchanged. Earlier models retain their previous interval methods, so interval-score comparisons also reflect calibration-policy differences. Prior feature/model selection still introduces selection optimism.
 
 `results_stacking/` includes comparisons, per-window weights, candidate forecasts, and the overall selected forecast. The simple equal mean of SARIMA, hour-weather Ridge, weather Ridge, weather correction, and Chronos-Bolt Small achieved selection RMSE 265.86 versus baseline 318.14 (16.4% reduction), winning 9/11 windows (81.8%). It lost on the latest audit: 172.21 versus baseline 120.40. Learned stacking did not beat this simple average. All past forecasts remain available.
 
-`baseline_win_rate.ipynb` now uses the latest stacking comparison when available, including all 36 candidates evaluated on the same eleven windows. Codex implemented, ran, and checked the ensemble experiments and documented the limitations.
+`notebooks/09_baseline_win_rate.ipynb` now uses the latest stacking comparison when available, including all 36 candidates evaluated on the same eleven windows. Codex implemented, ran, and checked the ensemble experiments and documented the limitations.
 
 ## Timestral: pretrained forecasting with future weather
 
-`session1_timestral.ipynb` compares Mistral Timestral 5M and 28M, each with 504 hours of history, with and without seven weather covariates. It also tests a fixed 50/50 blend of Timestral-28M with weather and the previous equal-weight ensemble. Larger Timestral sizes are not tested. The same eleven selection windows and illustrative weather-stress draws are used; the latest previously seen audit remains separate.
+`notebooks/07_timestral.ipynb` compares Mistral Timestral 5M and 28M, each with 504 hours of history, with and without seven weather covariates. It also tests a fixed 50/50 blend of Timestral-28M with weather and the previous equal-weight ensemble. Larger Timestral sizes are not tested. The same eleven selection windows and illustrative weather-stress draws are used; the latest previously seen audit remains separate.
 
 Reproduce after generating the prior robust/HF/stacking artifacts:
 
@@ -177,11 +193,11 @@ Package commit and model revisions are pinned/recorded. Downloads only fetch pub
 
 Outputs are in `results_timestral/`, including the best Timestral candidate and the overall selected forecast. Codex implemented and ran the comparison. Reused validation data and uncertain pretraining overlap limit conclusions about hidden-leaderboard performance.
 
-Timestral-run finding: Timestral-28M with weather achieved weather-stress selection RMSE 240.79 versus baseline 318.14 (24.3% reduction), winning 9/11 windows. It improves on the earlier equal-weight ensemble's 265.86. However, the latest audit RMSE was 180.14 versus baseline 120.40, and fixed-calibration validation interval coverage was 90.3%, below nominal 95%. The selected candidate is saved in `results_timestral/selected_model_forecast.csv`; future intervals refresh calibration using all completed historical windows without an independent test of that refreshed coverage. `baseline_win_rate.ipynb` now includes all 41 candidates from the common eleven-window evaluation and prefers the latest Timestral results when available.
+Timestral-run finding: Timestral-28M with weather achieved weather-stress selection RMSE 240.79 versus baseline 318.14 (24.3% reduction), winning 9/11 windows. It improves on the earlier equal-weight ensemble's 265.86. However, the latest audit RMSE was 180.14 versus baseline 120.40, and fixed-calibration validation interval coverage was 90.3%, below nominal 95%. The selected candidate is saved in `results_timestral/selected_model_forecast.csv`; future intervals refresh calibration using all completed historical windows without an independent test of that refreshed coverage. `notebooks/09_baseline_win_rate.ipynb` now includes all 41 candidates from the common eleven-window evaluation and prefers the latest Timestral results when available.
 
 ## Assignment-focused review: point accuracy and intervals
 
-Open `session1_task_review.ipynb`. This explicitly separates Session 1's full-48-hour RMSE objective from the final private day-two rank combination (30% RMSE, 30% MAPE, 40% Winkler). It tests shorter Timestral context, an hour-of-day covariate, Timestral-123M, causal half-strength recent level/bias adjustments, and SARIMA blends. It also compares expanding absolute, scaled, and daylight-specific asymmetric empirical intervals.
+Open `notebooks/08_task_review.ipynb`. This explicitly separates Session 1's full-48-hour RMSE objective from the final private day-two rank combination (30% RMSE, 30% MAPE, 40% Winkler). It tests shorter Timestral context, an hour-of-day covariate, Timestral-123M, causal half-strength recent level/bias adjustments, and SARIMA blends. It also compares expanding absolute, scaled, and daylight-specific asymmetric empirical intervals.
 
 Reproduce after the Timestral and previous experiment prerequisites:
 
