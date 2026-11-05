@@ -4,3 +4,6 @@ __pycache__/
 .cache/
 
 .venv-hf/
+.DS_Store
+results_snaive_search/all_combinations.csv
+results_snaive_search/search_arrays.npz

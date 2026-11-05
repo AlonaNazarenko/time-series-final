@@ -1,5 +1,39 @@
 # Session 1 — local time-series analysis
 
+## Quick start
+
+MATH840 final project: forecast the next 48 hours of electricity generation with 95% prediction intervals. The assignment is in [docs/MATH840_final_project.pdf](docs/MATH840_final_project.pdf).
+
+| Path | Contents |
+|---|---|
+| `train.csv`, `weather_forecast.csv` | Supplied data |
+| `NAZARENKO_project.csv` | Submission file, identical to `results_task/selected_model_forecast.csv` |
+| `session1_*.py` | Experiments, one script per step |
+| `session1_*.ipynb`, `baseline_win_rate.ipynb` | Results and review of each step |
+| `results*/` | Saved predictions, scores and forecasts |
+
+Saved results are in the repository, so the notebooks open without refitting. To rerun everything, set up both environments (see below) and run the steps in this order, because later steps read the outputs of earlier ones:
+
+```bash
+.venv/bin/python session1_models.py
+.venv/bin/python session1_more_models.py
+.venv/bin/python session1_robust_models.py
+.venv-hf/bin/python session1_hf_inference.py --download-only
+HF_HUB_OFFLINE=1 .venv-hf/bin/python session1_hf_inference.py
+.venv/bin/python session1_hf_evaluate.py
+.venv/bin/python session1_stacking.py
+.venv/bin/python session1_timestral_evaluate.py --prepare
+.venv-hf/bin/python session1_timestral_inference.py --download-only
+HF_HUB_OFFLINE=1 .venv-hf/bin/python session1_timestral_inference.py
+.venv/bin/python session1_timestral_evaluate.py
+.venv-hf/bin/python session1_task_inference.py --download-only
+HF_HUB_OFFLINE=1 .venv-hf/bin/python session1_task_inference.py
+.venv/bin/python session1_task_evaluate.py
+.venv/bin/python session1_snaive_ensembles.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python session1_snaive_search.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python session1_extra_snaive.py
+```
+
 ## SNaive ensembles
 
 Open `session1_extra_snaive.ipynb` for an executed Extra Trees + SNaive experiment, weight curves, window comparisons, prior-ensemble comparison, and the final forecast. Use the `Time Series (.venv)` kernel; Run All reruns evaluation with cached model predictions, while `REFIT=True` retrains the three Extra Trees configurations.
@@ -10,7 +44,7 @@ The best Extra Trees blend is 60% Extra Trees (60-day training) + 40% SNaive, wi
 
 For the large search, run `OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python session1_snaive_search.py`. It loads 50 unique point models from the common twelve saved rolling windows and tests 66,845 candidates: single-model controls, every SNaive/model pair at 5% weight increments, separate day-one/day-two pair weights at 10% increments, every SNaive/two-model triple on a 10% simplex grid, and 20,000 seeded random blends with 3, 4, 5, or 8 members. Random blends allocate at least 5% to SNaive. This is a broad finite search, not every possible continuous weighting. No model refits or downloads are needed.
 
-`results_snaive_search/` contains all combinations and weights, top 100, best per family, point RMSE/MAPE details, per-window results for the winner and references, and chronological grid-selection checks. The latter choose weights using only earlier completed windows, starting at fold 7, so their ten selection windows differ from the eleven used for the main ranking. All candidates share the same weather scenarios; the latest audit is excluded from selection. Duplicate point models are removed and scoring is checked against direct hourly arithmetic.
+`results_snaive_search/` contains the top 100, best per family, point RMSE/MAPE details, per-window results for the winner and references, and chronological grid-selection checks. The full ranked table (`all_combinations.csv`) and loss arrays (`search_arrays.npz`) are not stored because of their size; rerunning the script recreates them without refitting any model. The latter choose weights using only earlier completed windows, starting at fold 7, so their ten selection windows differ from the eleven used for the main ranking. All candidates share the same weather scenarios; the latest audit is excluded from selection. Duplicate point models are removed and scoring is checked against direct hourly arithmetic.
 
 The large-search winner is 10% SNaive + 20% hour-weather Ridge (60-day training) + 70% Timestral-28M with weather: selection RMSE 232.55, day-two RMSE 249.17, and 10/11 wins against SNaive. Latest audit RMSE is 179.85 versus SNaive's 120.40. The selected 48-hour forecast is `results_snaive_search/selected_model_forecast.csv`. Final intervals use all completed historical errors; this search optimizes point RMSE, not Winkler, and does not independently evaluate those intervals. Searching tens of thousands of combinations on reused validation windows increases selection optimism. Codex implemented and ran this experiment.
 
