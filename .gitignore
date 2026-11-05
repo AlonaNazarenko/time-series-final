@@ -5,5 +5,5 @@ __pycache__/
 
 .venv-hf/
 .DS_Store
-results_snaive_search/all_combinations.csv
-results_snaive_search/search_arrays.npz
+results/snaive_search/all_combinations.csv
+results/snaive_search/search_arrays.npz

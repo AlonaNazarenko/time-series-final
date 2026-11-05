@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from session1_models import metrics,baseline
 from session1_stacking import load_base_predictions
-ROOT=Path(__file__).resolve().parent;OUT=ROOT/'results_task'
+ROOT=Path(__file__).resolve().parent.parent;OUT=ROOT/'results/task'
 POLICIES=['absolute_day','scaled_symmetric','scaled_daynight']
 
 
@@ -35,10 +35,10 @@ def bounds(point,prior_points,prior_actual,prior_daylight,current_daylight,polic
 
 def run():
     data=pd.read_csv(ROOT/'train.csv',parse_dates=['ds']);future=pd.read_csv(ROOT/'weather_forecast.csv',parse_dates=['ds']);y=data.y.to_numpy()
-    inp=np.load(ROOT/'results_timestral'/'inputs.npz');origins=inp['origins'];new=np.load(OUT/'point_predictions.npz')
+    inp=np.load(ROOT/'results/timestral'/'inputs.npz');origins=inp['origins'];new=np.load(OUT/'point_predictions.npz')
     assert np.array_equal(origins,new['origins'])
     raw={k:new[k] for k in new.files if k!='origins'}
-    old=np.load(ROOT/'results_timestral'/'point_predictions.npz')
+    old=np.load(ROOT/'results/timestral'/'point_predictions.npz')
     raw['timestral28_original']=old['timestral_28m_weather_504h']
     raw['equal_mean']=inp['equal_mean']
     bases=load_base_predictions(data,origins.tolist())

@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import HistGradientBoostingRegressor, ExtraTreesRegressor, RandomForestRegressor
 from session1_models import baseline, fit_forecast, interval, metrics
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 CONFIGS={
  'seasonal_mean_3d':dict(kind='mean',days=3),
  'seasonal_mean_7d':dict(kind='mean',days=7),
@@ -116,7 +116,7 @@ def compare_windows(pred, out):
 
 
 def run():
-    out=ROOT/'results_more'; out.mkdir(exist_ok=True)
+    out=ROOT/'results/more'; out.mkdir(exist_ok=True)
     data=pd.read_csv(ROOT/'train.csv',parse_dates=['ds'])
     future=pd.read_csv(ROOT/'weather_forecast.csv',parse_dates=['ds']); future.index=np.arange(len(data),len(data)+48)
     y=data.y.to_numpy(); assert np.isfinite(y).all() and (y>0).all()

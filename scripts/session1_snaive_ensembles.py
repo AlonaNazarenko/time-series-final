@@ -7,16 +7,16 @@ from session1_models import baseline, metrics
 from session1_stacking import convex_weights
 from session1_task_evaluate import bounds
 
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'results_snaive'
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / 'results/snaive'
 
 
 def run():
     OUT.mkdir(exist_ok=True)
     data = pd.read_csv(ROOT / 'train.csv', parse_dates=['ds'])
     future = pd.read_csv(ROOT / 'weather_forecast.csv', parse_dates=['ds'])
-    inputs = np.load(ROOT / 'results_timestral/inputs.npz')
-    saved = np.load(ROOT / 'results_timestral/point_predictions.npz')
+    inputs = np.load(ROOT / 'results/timestral/inputs.npz')
+    saved = np.load(ROOT / 'results/timestral/point_predictions.npz')
     origins = inputs['origins']
     assert np.array_equal(origins, saved['origins'])
     assert len(origins) == 19 and origins[-1] == len(data)

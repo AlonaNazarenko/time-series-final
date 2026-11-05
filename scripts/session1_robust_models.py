@@ -15,7 +15,7 @@ from sklearn.ensemble import HistGradientBoostingRegressor
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from session1_models import baseline, metrics, interval
 from session1_more_models import predictor, perturb, features, compare_windows
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 CONFIGS={
  'seasonal_naive':dict(kind='baseline'),
  'SARIMA_21d':dict(kind='SARIMA',days=21),
@@ -114,7 +114,7 @@ def get_predictions(data,origin,variants,diagnostics):
 
 
 def run():
-    out=ROOT/'results_robust';out.mkdir(exist_ok=True)
+    out=ROOT/'results/robust';out.mkdir(exist_ok=True)
     data=pd.read_csv(ROOT/'train.csv',parse_dates=['ds']);y=data.y.to_numpy()
     future=pd.read_csv(ROOT/'weather_forecast.csv',parse_dates=['ds']);future.index=np.arange(len(data),len(data)+48)
     assert (y>0).all() and np.isfinite(y).all() and data.ds.is_unique

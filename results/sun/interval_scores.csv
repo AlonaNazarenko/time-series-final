@@ -1,0 +1,16 @@
+model,interval,W48,W_d2,cov_d2,width_d2,aud_W_d2
+mean_med4,absolute_day,1470.184,1287.716,0.917,775.847,775.847
+mean_med4,tier_sym,1248.051,1243.145,0.915,747.187,747.187
+mean_med4,tier_sym_scaled,1307.977,1285.397,0.908,705.095,705.095
+mean_med4,tier_asym,1309.391,1306.256,0.909,773.322,773.322
+mean_med4,tier_asym_scaled,1330.056,1305.818,0.9,748.832,748.832
+mean_gbm_phys_med,absolute_day,1505.813,1393.876,0.915,805.773,805.773
+mean_gbm_phys_med,tier_sym,1285.298,1351.249,0.914,780.022,780.022
+mean_gbm_phys_med,tier_sym_scaled,1331.953,1373.422,0.915,733.809,733.809
+mean_gbm_phys_med,tier_asym,1404.22,1437.474,0.894,789.311,789.311
+mean_gbm_phys_med,tier_asym_scaled,1410.142,1440.833,0.905,770.198,770.198
+mean_gbm_phys_ana_med,absolute_day,1473.759,1277.055,0.928,807.77,807.77
+mean_gbm_phys_ana_med,tier_sym,1225.869,1219.129,0.923,783.931,783.931
+mean_gbm_phys_ana_med,tier_sym_scaled,1282.975,1262.552,0.917,722.344,722.344
+mean_gbm_phys_ana_med,tier_asym,1348.285,1357.042,0.902,788.822,788.822
+mean_gbm_phys_ana_med,tier_asym_scaled,1342.011,1311.133,0.907,765.044,765.044

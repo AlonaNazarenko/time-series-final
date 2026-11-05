@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 from session1_models import fit_forecast,interval,metrics
 from session1_more_models import compare_windows
-ROOT=Path(__file__).resolve().parent
-OUT=ROOT/'results_hf'
+ROOT=Path(__file__).resolve().parent.parent
+OUT=ROOT/'results/hf'
 
 
 def run():
@@ -33,7 +33,7 @@ def run():
                         rows.append(dict(model=name,scenario=scenario,seed=seed,phase=phase,fold=fold,ds=data.ds.iloc[origin+h],horizon=h+1,
                                          actual=actual[h],forecast=p[h],lower_95=lo[h],upper_95=hi[h]))
     hf=pd.DataFrame(rows)
-    old=pd.read_csv(ROOT/'results_robust'/'validation_predictions.csv',parse_dates=['ds'])
+    old=pd.read_csv(ROOT/'results/robust'/'validation_predictions.csv',parse_dates=['ds'])
     pred=pd.concat([old,hf],ignore_index=True)
     compare_windows(pred,OUT)
     rows=[]
@@ -57,9 +57,9 @@ def run():
         if name==hf_winner:sub.to_csv(OUT/'best_hf_forecast.csv',index=False)
         if name==winner:sub.to_csv(OUT/'selected_model_forecast.csv',index=False)
     if winner not in points:
-        previous=json.loads((ROOT/'results_robust'/'run_summary.json').read_text())['selected_model']
+        previous=json.loads((ROOT/'results/robust'/'run_summary.json').read_text())['selected_model']
         assert winner==previous
-        pd.read_csv(ROOT/'results_robust'/'selected_model_forecast.csv').to_csv(OUT/'selected_model_forecast.csv',index=False)
+        pd.read_csv(ROOT/'results/robust'/'selected_model_forecast.csv').to_csv(OUT/'selected_model_forecast.csv',index=False)
     summary.to_csv(OUT/'model_comparison.csv',index=False)
     pred.to_csv(OUT/'validation_predictions.csv',index=False)
     dayrows=[]

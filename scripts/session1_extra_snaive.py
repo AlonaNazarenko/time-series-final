@@ -6,8 +6,8 @@ import pandas as pd
 from session1_more_models import predictor, perturb, compare_windows
 from session1_models import baseline, interval, metrics
 
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'results_extra_snaive'
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / 'results/extra_snaive'
 
 
 def run():

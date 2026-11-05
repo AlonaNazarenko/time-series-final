@@ -11,7 +11,7 @@ import pandas as pd
 from statsmodels.tsa.exponential_smoothing.ets import ETSModel
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 H = 48
 CONFIGS = {
     'ETS_ANA_7d': dict(kind='ETS', days=7, trend=False),
@@ -79,7 +79,7 @@ def interval(point, errors):
 
 
 def run(surname=None):
-    out = ROOT/'results'; out.mkdir(exist_ok=True)
+    out = ROOT/'results/ets_arima'; out.mkdir(parents=True, exist_ok=True)
     data = pd.read_csv(ROOT/'train.csv', parse_dates=['ds'])
     future = pd.read_csv(ROOT/'weather_forecast.csv', parse_dates=['ds'])
     assert data.ds.is_unique and data.ds.is_monotonic_increasing

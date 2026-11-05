@@ -10,13 +10,13 @@ import numpy as np
 import pandas as pd
 from session1_models import interval
 
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'results_snaive_search'
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / 'results/snaive_search'
 
 
 def load():
-    frames = [pd.read_csv(ROOT / 'results_timestral/validation_predictions.csv'),
-              pd.read_csv(ROOT / 'results_task/validation_predictions.csv')]
+    frames = [pd.read_csv(ROOT / 'results/timestral/validation_predictions.csv'),
+              pd.read_csv(ROOT / 'results/task/validation_predictions.csv')]
     names, arrays, futures = [], [], []
     reference = None
     for source, frame in enumerate(frames):
@@ -35,8 +35,8 @@ def load():
                 continue
             paths = []
             if source == 1:
-                paths += sorted((ROOT / 'results_task').glob(f'forecast_{name}__*.csv'))
-            for folder in ['results_timestral', 'results_stacking', 'results_hf', 'results_robust']:
+                paths += sorted((ROOT / 'results/task').glob(f'forecast_{name}__*.csv'))
+            for folder in ['results/timestral', 'results/stacking', 'results/hf', 'results/robust']:
                 paths += [ROOT / folder / f'forecast_{name}.csv', ROOT / folder / f'point_{name}.csv']
             path = next((p for p in paths if p.exists()), None)
             if path is None:

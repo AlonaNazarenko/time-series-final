@@ -1,7 +1,7 @@
 """Local Timestral inference; use the .venv-hf environment."""
 import os
 from pathlib import Path
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 os.environ.setdefault('HF_HOME',str(ROOT/'.cache'/'huggingface'))
 os.environ.setdefault('HF_HUB_DISABLE_TELEMETRY','1')
 import argparse,json,time
@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from huggingface_hub import HfApi,snapshot_download
 from timestral import TimestralForecaster
-OUT=ROOT/'results_timestral'
+OUT=ROOT/'results/timestral'
 MODELS=['mistralai/Timestral-5M','mistralai/Timestral-28M']
 
 

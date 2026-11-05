@@ -1,7 +1,7 @@
 """Run pretrained Chronos-Bolt locally in .venv-hf; evaluate with the original .venv."""
 import os
 from pathlib import Path
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 os.environ.setdefault('HF_HOME',str(ROOT/'.cache'/'huggingface'))
 os.environ.setdefault('HF_HUB_DISABLE_TELEMETRY','1')
 os.environ.setdefault('TOKENIZERS_PARALLELISM','false')
@@ -15,7 +15,7 @@ from huggingface_hub import HfApi, snapshot_download
 from chronos import BaseChronosPipeline
 MODELS=['amazon/chronos-bolt-tiny','amazon/chronos-bolt-small']
 CONTEXTS=[168,504,1536]
-OUT=ROOT/'results_hf'
+OUT=ROOT/'results/hf'
 
 
 def download():

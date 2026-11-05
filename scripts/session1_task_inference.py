@@ -1,7 +1,7 @@
 """Targeted Timestral checks: shorter context, clock covariate, larger model."""
 import os
 from pathlib import Path
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 os.environ.setdefault('HF_HOME',str(ROOT/'.cache'/'huggingface'))
 os.environ.setdefault('HF_HUB_DISABLE_TELEMETRY','1')
 import json,argparse,time
@@ -10,7 +10,7 @@ import pandas as pd
 import torch
 from huggingface_hub import HfApi,snapshot_download
 from timestral import TimestralForecaster
-OUT=ROOT/'results_task'
+OUT=ROOT/'results/task'
 SETTINGS={'timestral28_recent7d':('mistralai/Timestral-28M',168,False),
           'timestral28_clock21d':('mistralai/Timestral-28M',504,True),
           'timestral123_weather21d':('mistralai/Timestral-123M',504,False)}
@@ -18,7 +18,7 @@ SETTINGS={'timestral28_recent7d':('mistralai/Timestral-28M',168,False),
 
 def download():
     OUT.mkdir(exist_ok=True)
-    old=json.loads((ROOT/'results_timestral'/'model_versions.json').read_text())
+    old=json.loads((ROOT/'results/timestral'/'model_versions.json').read_text())
     file=OUT/'model_versions.json'
     if file.exists():old.update(json.loads(file.read_text()))
     versions={}
@@ -32,7 +32,7 @@ def download():
 
 def infer():
     torch.set_num_threads(4);torch.manual_seed(42)
-    inp=np.load(ROOT/'results_timestral'/'inputs.npz')
+    inp=np.load(ROOT/'results/timestral'/'inputs.npz')
     data=pd.read_csv(ROOT/'train.csv',parse_dates=['ds']);future=pd.read_csv(ROOT/'weather_forecast.csv',parse_dates=['ds'])
     clock=[]
     for i,origin in enumerate(inp['origins']):

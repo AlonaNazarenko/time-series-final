@@ -1,0 +1,13 @@
+model,phase,part,RMSE,MAPE,Winkler,coverage
+raw_blend,selection,48h,258.36,298.11,1204.19,0.91
+raw_blend,selection,day2,257.92,208.51,1290.01,0.92
+raw_blend,selection,h1-6,176.16,1136.09,759.52,0.87
+raw_blend,audit,48h,115.96,66.74,593.25,1.0
+raw_blend,audit,day2,112.86,68.39,627.87,1.0
+raw_blend,audit,h1-6,38.16,61.71,323.27,1.0
+anchored_blend,selection,48h,249.3,199.48,1150.84,0.93
+anchored_blend,selection,day2,259.12,208.62,1294.57,0.92
+anchored_blend,selection,h1-6,88.09,377.06,438.57,1.0
+anchored_blend,audit,48h,115.4,66.31,575.39,1.0
+anchored_blend,audit,day2,112.77,68.32,633.47,1.0
+anchored_blend,audit,h1-6,33.88,58.34,266.65,1.0

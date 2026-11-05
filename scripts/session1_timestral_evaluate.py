@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 from session1_more_models import perturb,compare_windows
 from session1_models import interval,metrics
-ROOT=Path(__file__).resolve().parent
-OUT=ROOT/'results_timestral'
+ROOT=Path(__file__).resolve().parent.parent
+OUT=ROOT/'results/timestral'
 
 
 def prepare():
@@ -50,7 +50,7 @@ def evaluate():
                     for h in range(48):
                         rows.append(dict(model=name,scenario=scenario,seed=j,fold=fold,phase='selection' if fold<17 else 'last_window_audit',
                             ds=data.ds.iloc[o+h],horizon=h+1,actual=y[o+h],forecast=p[h],lower_95=lo[h],upper_95=hi[h]))
-    pred=pd.concat([pd.read_csv(ROOT/'results_stacking'/'validation_predictions.csv',parse_dates=['ds']),pd.DataFrame(rows)],ignore_index=True)
+    pred=pd.concat([pd.read_csv(ROOT/'results/stacking'/'validation_predictions.csv',parse_dates=['ds']),pd.DataFrame(rows)],ignore_index=True)
     compare_windows(pred,OUT)
     summary=[]
     for (scenario,phase,name),g in pred.groupby(['scenario','phase','model']):
@@ -71,8 +71,8 @@ def evaluate():
         if name==best:sub.to_csv(OUT/'best_timestral_forecast.csv',index=False)
         if name==winner:sub.to_csv(OUT/'selected_model_forecast.csv',index=False)
     if winner not in points:
-        assert winner==json.loads((ROOT/'results_stacking'/'run_summary.json').read_text())['selected_model']
-        pd.read_csv(ROOT/'results_stacking'/'selected_model_forecast.csv').to_csv(OUT/'selected_model_forecast.csv',index=False)
+        assert winner==json.loads((ROOT/'results/stacking'/'run_summary.json').read_text())['selected_model']
+        pd.read_csv(ROOT/'results/stacking'/'selected_model_forecast.csv').to_csv(OUT/'selected_model_forecast.csv',index=False)
     pred.to_csv(OUT/'validation_predictions.csv',index=False);summary.to_csv(OUT/'model_comparison.csv',index=False)
     report=dict(selected_model=winner,best_timestral_candidate=best,candidates=list(points),
         selection_rule='Lowest pooled weather-stress RMSE on same eleven selection windows; latest audit excluded.',

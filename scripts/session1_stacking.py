@@ -10,8 +10,8 @@ from sklearn.preprocessing import StandardScaler
 from session1_models import interval,metrics
 from session1_more_models import perturb,compare_windows
 from session1_robust_models import CONFIGS,make_predictor
-ROOT=Path(__file__).resolve().parent
-OUT=ROOT/'results_stacking'
+ROOT=Path(__file__).resolve().parent.parent
+OUT=ROOT/'results/stacking'
 BASES=['SARIMA_21d','hour_weather_ridge_14d','weather_ridge_21d','weather_correction_28d','chronos_bolt_small_504h']
 METHODS=['equal_mean','median','stack_convex','stack_convex_recent4','stack_ridge','stack_daywise','stack_shrunk']
 SCENARIOS={'observed_weather':[0],'weather_stress':[1,2,3]}
@@ -56,8 +56,8 @@ def combine(method,past_x,past_y,future_x):
 
 
 def load_base_predictions(data,origins):
-    previous=pd.read_csv(ROOT/'results_robust'/'validation_predictions.csv')
-    hf=np.load(ROOT/'results_hf'/'point_predictions.npz')
+    previous=pd.read_csv(ROOT/'results/robust'/'validation_predictions.csv')
+    hf=np.load(ROOT/'results/hf'/'point_predictions.npz')
     assert hf['origins'].tolist()==origins
     matrices={scenario:np.empty((19,len(seeds),48,len(BASES))) for scenario,seeds in SCENARIOS.items()}
     future=pd.read_csv(ROOT/'weather_forecast.csv',parse_dates=['ds']);future.index=np.arange(len(data),len(data)+48)
@@ -80,7 +80,7 @@ def load_base_predictions(data,origins):
                         assert len(g)==48
                         matrices[scenario][i,j,:,m]=g.forecast.to_numpy()
             else:
-                p=pd.read_csv(ROOT/'results_robust'/f'point_{name}.csv').forecast.to_numpy()
+                p=pd.read_csv(ROOT/'results/robust'/f'point_{name}.csv').forecast.to_numpy()
                 for scenario in SCENARIOS:matrices[scenario][i,:,:,m]=p
     assert all(np.isfinite(x).all() for x in matrices.values())
     return matrices
@@ -118,7 +118,7 @@ def run():
             all_errors[method,scenario]=errors
             print(scenario,method,'complete',flush=True)
     new=pd.DataFrame(rows)
-    previous=pd.read_csv(ROOT/'results_hf'/'validation_predictions.csv',parse_dates=['ds'])
+    previous=pd.read_csv(ROOT/'results/hf'/'validation_predictions.csv',parse_dates=['ds'])
     pred=pd.concat([previous,new],ignore_index=True)
     compare_windows(pred,OUT)
     scores=[]
@@ -141,8 +141,8 @@ def run():
         if method==best_ensemble:sub.to_csv(OUT/'best_new_ensemble_forecast.csv',index=False)
         if method==winner:sub.to_csv(OUT/'selected_model_forecast.csv',index=False)
     if winner not in METHODS:
-        prior=json.loads((ROOT/'results_hf'/'run_summary.json').read_text())['selected_model'];assert winner==prior
-        pd.read_csv(ROOT/'results_hf'/'selected_model_forecast.csv').to_csv(OUT/'selected_model_forecast.csv',index=False)
+        prior=json.loads((ROOT/'results/hf'/'run_summary.json').read_text())['selected_model'];assert winner==prior
+        pd.read_csv(ROOT/'results/hf'/'selected_model_forecast.csv').to_csv(OUT/'selected_model_forecast.csv',index=False)
     pred.to_csv(OUT/'validation_predictions.csv',index=False)
     summary.to_csv(OUT/'model_comparison.csv',index=False)
     (OUT/'weights_by_window.json').write_text(json.dumps(weight_rows,indent=2))
